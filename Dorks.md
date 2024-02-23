@@ -1,109 +1,77 @@
-JavaScript (Node.js)
-XSS (Reflected and Stored)
+**JavaScript (Node.js)**
 
-    regex
+> XSS (Reflected and Stored)
 
-/\bres.send\(\s*.*\breq.query\b/
+    /\bres.send\(\s*.*\breq.query\b/
 
-regex
-
-/\bres.send\(\s*.*\breq.body\b/
-
-regex
+    /\bres.send\(\s*.*\breq.body\b/
 
     /\bdocument\.write\(\s*.*\blocation\.search\b/
 
-NoSQL Injection (MongoDB with Node.js)
 
-    regex
+> NoSQL Injection (MongoDB with Node.js)
 
-/\.find\(\s*.*\breq\.body\b/
-
-regex
+    /\.find\(\s*.*\breq\.body\b/
 
     /\.find\(\s*.*\breq\.query\b/
 
-Remote Code Execution (RCE)
+> Remote Code Execution (RCE)
 
-    regex
-
-/\beval\(\s*.*\breq\.body\b/
-
-regex
+    /\beval\(\s*.*\breq\.body\b/
 
     /\beval\(\s*.*\breq\.query\b/
 
-Python (Django/Flask)
-XSS (Template Injection)
+**Python (Django/Flask)**
 
-    regex
+> XSS (Template Injection)    
 
-/{{\s*.*\brequest\.GET\b/
-
-regex
+    /{{\s*.*\brequest\.GET\b/
 
     /{{\s*.*\brequest\.form\b/
 
-SQL Injection
+> SQL Injection
 
-    regex
-
-/\bexecute\(\s*.*\brequest\.form\b/
-
-regex
+    /\bexecute\(\s*.*\brequest\.form\b/
 
     /\bexecute\(\s*.*\brequest\.args\b/
 
-Command Injection
+> Command Injection
 
-    regex
-
-/subprocess\.call\(\s*.*\brequest\.form\b/
-
-regex
+    /subprocess\.call\(\s*.*\brequest\.form\b/
 
     /os\.system\(\s*.*\brequest\.form\b/
 
-Java (Spring Framework)
-XSS (Spring MVC)
+**Java (Spring Framework)**
 
-    regex
+> XSS (Spring MVC)
 
     /\bModelAndView.addObject\(\s*.*\bHttpServletRequest.getParameter\b/
 
-SQL Injection (JDBC)
-
-    regex
+> SQL Injection (JDBC)  
 
     /\.executeQuery\(\s*.*\brequest\.getParameter\b/
 
-Command Injection
-
-    regex
+> Command Injection
 
     /Runtime\.getRuntime\(\)\.exec\(\s*.*\brequest\.getParameter\b/
 
-General
-File Upload Vulnerabilities
+**General**
+> File Upload Vulnerabilities
 
-    regex
+    /\bmove_uploaded_file\(\s*.*\b$_FILES\b/` (PHP)
 
-/\bmove_uploaded_file\(\s*.*\b$_FILES\b/` (PHP)
 
-regex
 
-/\.save\(\s*.*\brequest\.files\b/` (Python Flask)
+    /\.save\(\s*.*\brequest\.files\b/` (Python Flask)
 
-regex
+
 
     /MultipartFile\.transferTo\(\s*.*\brequest\.getParameter\b/` (Java Spring)
 
-Insecure Direct Object References (IDOR)
+> Insecure Direct Object References (IDOR)
 
-    regex
+    /\.findById\(\s*.*\breq\.params\b/` (Node.js)
 
-/\.findById\(\s*.*\breq\.params\b/` (Node.js)
 
-regex
 
-/\.get\(\s*.*\brequest\.GET\b/` (Python Django)
+    /\.get\(\s*.*\brequest\.GET\b/` (Python Django)
